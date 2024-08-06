@@ -14,8 +14,12 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.purple,
       ),
       
-      body: ListView.builder(itemBuilder: (ctx, index){
-        return Container();
+      body: ListView.builder(
+          itemCount: controller.taskList.length,
+          itemBuilder: (ctx, index){
+        return ListTile(
+          title: Text(controller.taskList[index].taskName),
+        );
       }),
       floatingActionButton: FloatingActionButton(
         onPressed: (){},
