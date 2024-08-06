@@ -13,6 +13,10 @@ class HomePage extends StatelessWidget {
         title: const Text('Task Manager', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
         backgroundColor: Colors.purple,
       ),
+      
+      body: ListView.builder(itemBuilder: (ctx, index){
+        return Container();
+      }),
       floatingActionButton: FloatingActionButton(
         onPressed: (){},
         child: const Icon(Icons.add, color: Colors.white,),
