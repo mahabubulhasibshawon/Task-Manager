@@ -7,10 +7,9 @@ class HomepageController {
   final TextEditingController taskDetailsController = TextEditingController();
 
   List<TaskModel> taskList = [
-    TaskModel(
-        taskName: 'demo task', taskDetails: 'Hello world\n', isComplete: false),
+    TaskModel(taskName: 'demo task', taskDetails: 'Hello world\n', isComplete: true),
     TaskModel(taskName: 'demo task', taskDetails: '', isComplete: false),
-    TaskModel(taskName: 'demo task', taskDetails: '', isComplete: false),
+    TaskModel(taskName: 'demo task', taskDetails: '', isComplete: true),
   ];
 
   void addNewTask() {
@@ -18,5 +17,11 @@ class HomepageController {
         taskName: taskDetailsController.text,
         taskDetails: taskDetailsController.text,
         isComplete: false));
+    taskTitleController.clear();
+    taskDetailsController.clear();
+  }
+
+  void markComplete(int index) {
+    taskList[index].isComplete = !taskList[index].isComplete;
   }
 }

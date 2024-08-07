@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_manager/src/homepage_controller.dart';
+import '../src/homepage_controller.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({super.key});
@@ -24,32 +24,40 @@ class _HomePageState extends State<HomePage> {
       body: ListView.builder(
           itemCount: controller.taskList.length,
           itemBuilder: (ctx, index) {
-            return ExpansionTile(
-              title: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            return InkWell(
+              onLongPress: (){
+                setState(() {
+                  controller.markComplete(index);
+                });
+              },
+              child: ExpansionTile(
+                title: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      controller.taskList[index].taskName,
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    controller.taskList[index].isComplete ?
+                    Icon(Icons.done,color: Colors.green,) : const SizedBox.shrink()
+                  ],
+                ),
+                leading: const Icon(Icons.list_sharp),
                 children: [
-                  Text(
-                    controller.taskList[index].taskName,
-                    style: const TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  Icon(Icons.done,color: Colors.green,)
+                  Container(
+                    padding: const EdgeInsets.all(20),
+                    child: Row(
+                      children: [
+                        Text(
+                          controller.taskList[index].taskDetails,
+                          style: const TextStyle(fontSize: 16),
+                          textAlign: TextAlign.start,
+                        ),
+                      ],
+                    ),
+                  )
                 ],
               ),
-              leading: const Icon(Icons.list_sharp),
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(20),
-                  child: Row(
-                    children: [
-                      Text(
-                        controller.taskList[index].taskDetails,
-                        style: const TextStyle(fontSize: 16),
-                        textAlign: TextAlign.start,
-                      ),
-                    ],
-                  ),
-                )
-              ],
             );
           }),
       floatingActionButton: FloatingActionButton(
@@ -70,13 +78,13 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       TextField(
                         controller: controller.taskTitleController,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                             label: Text('Task Name'),
                             hintText: 'Name of the task'),
                       ),
                       TextField(
                         controller: controller.taskDetailsController,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                             label: Text('Details'),
                             hintText: 'Type your task details'),
                       ),
@@ -88,6 +96,7 @@ class _HomePageState extends State<HomePage> {
                           setState(() {
                             controller.addNewTask();
                           });
+                          Navigator.pop(context);
                         },
                         child: const Text(
                           'Add',
