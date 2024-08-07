@@ -17,8 +17,28 @@ class HomePage extends StatelessWidget {
       body: ListView.builder(
           itemCount: controller.taskList.length,
           itemBuilder: (ctx, index){
-        return ListTile(
-          title: Text(controller.taskList[index].taskName),
+        return ExpansionTile(
+          title: Text(
+              controller.taskList[index].taskName,
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          leading: Icon(Icons.list_sharp),
+          children: [
+            Container(
+              padding: EdgeInsets.all(20),
+              child: Row(
+                children: [
+                  Text(
+                    controller.taskList[index].taskDetails,
+                    style: const TextStyle(
+                      fontSize: 16
+                    ),
+                    textAlign: TextAlign.start,
+                  ),
+                ],
+              ),
+            )
+          ],
         );
       }),
       floatingActionButton: FloatingActionButton(
