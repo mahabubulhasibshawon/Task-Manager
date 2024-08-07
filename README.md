@@ -5,7 +5,7 @@ A new Flutter project about task manager . You can add task, task details , mark
 
 
 ### ScreenShots
-![image](https://github.com/user-attachments/assets/980cd187-e0c2-4001-90ef-e45871bd19f8)
+https://github.com/user-attachments/assets/061319ff-e651-4284-883a-7e9104d683ed
 
 ## Getting Started
 
