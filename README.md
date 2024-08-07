@@ -1,16 +1,39 @@
 # task_manager
 
-A new Flutter project.
+A new Flutter project about task manager . You can add task, task details , mark as completed or not and so on
+
+
+
+### ScreenShots
+![image](https://github.com/user-attachments/assets/980cd187-e0c2-4001-90ef-e45871bd19f8)
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Prerequisites
 
-A few resources to get you started if this is your first Flutter project:
+- Flutter SDK: [Install Flutter](https://flutter.dev/docs/get-started/install)
+- An IDE like Android Studio or Visual Studio Code with Flutter and Dart plugins.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Installation
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/mahabubulhasibshawon/Task-Manager.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd task_manager
+    ```
+3. Get the dependencies:
+    ```bash
+    flutter pub get
+    ```
+
+### Running the App
+
+1. Connect your device or start an emulator.
+2. Run the app:
+    ```bash
+    flutter run
+    ```
+

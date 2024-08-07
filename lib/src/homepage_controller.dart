@@ -14,7 +14,7 @@ class HomepageController {
 
   void addNewTask() {
     taskList.add(TaskModel(
-        taskName: taskDetailsController.text,
+        taskName: taskTitleController.text,
         taskDetails: taskDetailsController.text,
         isComplete: false));
     taskTitleController.clear();
